@@ -7,33 +7,33 @@
 
 @layer base {
   :root {
-    --background: 218 35% 11%;
-    --foreground: 210 40% 98%;
+    --background: 210 40% 98%;
+    --foreground: 217 33% 17%;
 
-    --card: 217 33% 17%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 217 33% 17%;
 
-    --popover: 218 35% 11%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 217 33% 17%;
 
     --primary: 199 88% 48%;
-    --primary-foreground: 210 40% 98%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 32% 18%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 217 33% 17%;
 
-    --muted: 217 32% 18%;
-    --muted-foreground: 215 20% 80%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 45%;
 
     --accent: 199 88% 48%;
-    --accent-foreground: 210 40% 98%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217 32% 18%;
-    --input: 217 32% 18%;
-    --ring: 200 88% 48%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 88% 48%;
 
     --radius: 0.75rem;
 
@@ -66,11 +66,11 @@
 
 @layer components {
   .glass-card {
-    @apply bg-card/50 backdrop-blur-xl border border-white/10 shadow-lg;
+    @apply bg-white/90 backdrop-blur-sm border border-border shadow-md;
   }
   
   .luxury-gradient {
-    @apply bg-gradient-to-r from-luxdrive-black via-luxdrive-blue/20 to-luxdrive-black;
+    @apply bg-gradient-to-r from-white via-luxdrive-blue/10 to-white;
   }
   
   .text-glow {
@@ -94,7 +94,7 @@
   }
   
   .navbar-item {
-    @apply relative text-luxdrive-white/70 hover:text-luxdrive-white transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-luxdrive-blue after:transition-all after:duration-300 hover:after:w-full;
+    @apply relative text-luxdrive-blue/80 hover:text-luxdrive-blue transition-colors duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-luxdrive-blue after:transition-all after:duration-300 hover:after:w-full;
   }
   
   .typewriter-container {
@@ -130,7 +130,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: theme('colors.luxdrive.black');
+  background: theme('colors.background');
 }
 
 ::-webkit-scrollbar-thumb {
@@ -139,7 +139,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: theme('colors.luxdrive.silver');
+  background: theme('colors.luxdrive.blue/80');
 }
 
 /* Scroll reveal animation classes */
