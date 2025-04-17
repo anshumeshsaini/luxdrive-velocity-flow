@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           <div>
             <Link to="/" className="flex items-center">
               <span className="text-3xl font-extrabold text-white tracking-wide">
-                LUX<span className="text-yellow-400">DRIVE</span>
+                LUX<span className="text-white">DRIVE</span>
               </span>
             </Link>
             <p className="text-gray-300 mt-4">
@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           
           {/* Quick Links */}
           <div>
-            <h3 className="text-yellow-400 font-bold text-xl mb-6">Quick Links</h3>
+            <h3 className="text-white font-bold text-xl mb-6">Quick Links</h3>
             <ul className="space-y-4">
               <li>
                 <Link to="/fleet" className="text-gray-300 hover:text-yellow-400 hover:translate-x-2 transition-transform duration-300">
@@ -74,18 +74,18 @@ const Footer: React.FC = () => {
           
           {/* Contact Info */}
           <div>
-            <h3 className="text-yellow-400 font-bold text-xl mb-6">Contact Us</h3>
+            <h3 className="text-white font-bold text-xl mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <Phone size={18} className="text-yellow-400 mr-3 mt-1" />
+                <Phone size={18} className="text-white mr-3 mt-1" />
                 <span className="text-gray-300">+1 (800) LUXDRIVE</span>
               </li>
               <li className="flex items-start">
-                <Mail size={18} className="text-yellow-400 mr-3 mt-1" />
+                <Mail size={18} className="text-white mr-3 mt-1" />
                 <span className="text-gray-300">info@luxdrive.com</span>
               </li>
               <li className="flex items-start">
-                <MapPin size={18} className="text-yellow-400 mr-3 mt-1" />
+                <MapPin size={18} className="text-white mr-3 mt-1" />
                 <span className="text-gray-300">
                   123 Luxury Avenue, Beverly Hills, CA 90210, United States
                 </span>
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
           
           {/* Newsletter */}
           <div>
-            <h3 className="text-yellow-400 font-bold text-xl mb-6">Newsletter</h3>
+            <h3 className="text-white font-bold text-xl mb-6">Newsletter</h3>
             <p className="text-gray-300 mb-4">
               Subscribe to our newsletter for exclusive offers and updates.
             </p>
@@ -104,12 +104,12 @@ const Footer: React.FC = () => {
                 <input 
                   type="email" 
                   placeholder="Your email address" 
-                  className="w-full bg-white/10 border border-yellow-400 rounded-lg px-4 py-3 text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all duration-300"
+                  className="w-full bg-white/10 border border-white rounded-lg px-4 py-3 text-gray-300 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all duration-300"
                 />
               </div>
               <button 
                 type="submit" 
-                className="w-full bg-yellow-400 text-black py-3 rounded-lg hover:bg-yellow-500 transition-transform transform hover:scale-105"
+                className="w-full bg-white text-black py-3 rounded-lg hover:bg-yellow-500 transition-transform transform hover:scale-105"
               >
                 Subscribe
               </button>
@@ -122,13 +122,13 @@ const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} LUXDRIVE. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/privacy" className="text-gray-300 hover:text-yellow-400 text-sm">
+            <Link to="/privacy" className="text-gray-300 hover:text-white text-sm">
               Privacy Policy
             </Link>
-            <Link to="/terms" className="text-gray-300 hover:text-yellow-400 text-sm">
+            <Link to="/terms" className="text-gray-300 hover:text-white text-sm">
               Terms of Service
             </Link>
-            <Link to="/cookie" className="text-gray-300 hover:text-yellow-400 text-sm">
+            <Link to="/cookie" className="text-gray-300 hover:text-white text-sm">
               Cookie Policy
             </Link>
           </div>

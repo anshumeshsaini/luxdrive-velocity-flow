@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion"; // ✅ Import framer-motion
 import { FaLock, FaUserTie, FaClock, FaHeadset } from "react-icons/fa";
 import WhyChooseSVG from '../Assests/audi.png'; // ✅ Ensure this path is correct
 
@@ -7,14 +8,19 @@ const WhyChooseUs = () => {
         <div className="bg-white py-16 px-4 md:px-20 flex flex-col md:flex-row items-center justify-between gap-12">
 
             {/* 🚗 Left: SVG Car Image */}
-            <div className="w-full md:w-1/2 relative flex justify-center md:justify-start">
+            <motion.div
+                className="w-full md:w-1/2 relative flex justify-center md:justify-start"
+                initial={{ scale: 0.9, y: 50, opacity: 0 }}
+                animate={{ scale: 1, y: 0, opacity: 1 }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                whileHover={{ scale: 1.05, y: -10 }}
+            >
                 <img
                     src={WhyChooseSVG}
                     alt="Why Choose Us Car"
                     className="w-[120%] md:w-[150%] h-auto object-contain -ml-20"
                 />
-            </div>
-
+            </motion.div>
 
             {/* 📝 Right: Content */}
             <div className="w-full md:w-1/2 max-w-xl">
