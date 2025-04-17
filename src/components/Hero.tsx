@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ChevronDown, ChevronRight } from 'lucide-react';
 import car from '../Assests/car.png';
 import WhyChooseUs from './WhyChooseus';
+import Navbar from './Navbar';
 
 const cars = [
   {
@@ -52,6 +53,7 @@ const Hero = () => {
   return (
       <>
         <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+          
           {/* Video Background */}
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/80 to-white z-10" />
@@ -68,32 +70,46 @@ const Hero = () => {
           </div>
 
           {/* Hero Section */}
-          <section ref={heroRef} className="relative z-20 min-h-screen flex items-center text-black">
-            <div className="w-1/2 h-full flex flex-col justify-center px-8 sm:px-12 lg:px-16">
-              <h1 ref={headingRef} className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+          <section ref={heroRef} className="relative z-20 min-h-screen flex flex-col-reverse md:flex-row items-center text-black">
+            <div className="w-full md:w-1/2 h-full flex flex-col justify-center px-6 sm:px-8 md:px-12 lg:px-16">
+              <h1 ref={headingRef} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 sm:mb-6">
                 Drive <span className="text-blue-600">Excellence</span>
               </h1>
-              <p className="text-lg md:text-xl mb-8 text-gray-700">
+              <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 text-gray-700">
                 Experience the pinnacle of automotive luxury with our curated collection of high-performance vehicles.
               </p>
-              <div className="flex space-x-4">
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                 <button
                     onClick={scrollToFleet}
-                    className="group bg-blue-700 text-white hover:bg-blue-500 px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(29,78,216,0.5)] flex items-center space-x-2"
+                    className="group bg-blue-700 text-white hover:bg-blue-500 px-6 sm:px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-[0_0_30px_rgba(29,78,216,0.5)] flex items-center justify-center space-x-2"
                 >
                   <span>Explore Fleet</span>
                   <ChevronRight className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button className="relative overflow-hidden px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 group bg-blue-500 text-white">
+                <button className="relative overflow-hidden px-6 sm:px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 group bg-blue-500 text-white">
                   <span className="relative z-10">Learn More</span>
                   <div className="absolute inset-0 border border-blue-700 group-hover:border-blue-500 rounded-full transition-colors" />
                   <div className="absolute inset-0 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 bg-blue-700/10" />
                 </button>
               </div>
+              {/* Car Image for Mobile */}
+              <div className="block md:hidden w-full h-auto relative overflow-hidden mt-6">
+                <img
+                    src={car}
+                    alt={cars[activeIndex]?.name || "Luxury Car"}
+                    className="w-full h-auto object-contain transition-all duration-1000 ease-out"
+                    style={{
+                      transform: `scale(${1 - scrollY * 0.0005})`,
+                      opacity: Math.max(0, 1 - scrollY * 0.002),
+                      filter: `brightness(${1 - scrollY * 0.001})`,
+                      willChange: 'transform, opacity, filter',
+                    }}
+                />
+              </div>
             </div>
 
-            {/* Car Image Parallax */}
-            <div className="w-1/2 h-full relative overflow-hidden">
+            {/* Car Image for Desktop */}
+            <div className="hidden md:block w-1/2 h-full relative overflow-hidden">
               <img
                   src={car}
                   alt={cars[activeIndex]?.name || "Luxury Car"}

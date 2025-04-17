@@ -100,11 +100,14 @@ const TestimonialsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-white relative overflow-hidden">
+      {/* Background Glow */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-white to-blue-50 opacity-50 pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <ScrollReveal>
-          <h2 className="text-4xl font-bold text-center mb-16 text-white">
-            What Our <span className="text-glow">Clients</span> Say
+          <h2 className="text-5xl font-extrabold text-center mb-16 text-blue-600 tracking-wide">
+            What Our <span className="text-glow-blue">Clients</span> Say
           </h2>
         </ScrollReveal>
 
@@ -112,18 +115,18 @@ const TestimonialsSection: React.FC = () => {
           {/* Testimonial Carousel */}
           <div className="overflow-hidden relative">
             <div 
-              className="flex transition-transform duration-500 ease-in-out"
+              className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${activeIndex * 100}%)` }}
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="min-w-full px-4">
-                  <div className="glass-card rounded-2xl p-8 md:p-12 bg-white shadow-lg">
+                  <div className="glass-card rounded-2xl p-8 md:p-12 bg-white border border-blue-200 hover:border-blue-300 transition-border duration-300">
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                       <div className="flex-shrink-0">
                         <img 
                           src={testimonial.avatar} 
                           alt={testimonial.name} 
-                          className="w-24 h-24 rounded-full object-cover border-4 border-luxdrive-blue/30"
+                          className="w-24 h-24 rounded-full object-cover border-4 border-blue-600"
                         />
                       </div>
                       <div>
@@ -131,14 +134,20 @@ const TestimonialsSection: React.FC = () => {
                           {[...Array(5)].map((_, i) => (
                             <Star 
                               key={i} 
-                              className={`w-5 h-5 ${i < testimonial.rating ? 'fill-luxdrive-gold text-luxdrive-gold' : 'text-gray-400'}`} 
+                              className={`w-5 h-5 ${
+                                i < testimonial.rating 
+                                  ? 'fill-yellow-400 text-yellow-400 animate-pulse' 
+                                  : 'text-gray-400'
+                              }`} 
                             />
                           ))}
                         </div>
-                        <p className="text-blue-600 mb-6 italic text-lg">"{testimonial.text}"</p>
+                        <p className="text-blue-600 mb-6 italic text-lg leading-relaxed">
+                          "{testimonial.text}"
+                        </p>
                         <div>
-                          <h4 className="text-white font-bold text-lg">{testimonial.name}</h4>
-                          <p className="text-luxdrive-blue">{testimonial.position}</p>
+                          <h4 className="text-blue-600 font-bold text-lg">{testimonial.name}</h4>
+                          <p className="text-blue-400">{testimonial.position}</p>
                         </div>
                       </div>
                     </div>
@@ -151,7 +160,7 @@ const TestimonialsSection: React.FC = () => {
           {/* Navigation Arrows */}
           <button 
             onClick={prevTestimonial}
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-5 md:-translate-x-12 bg-luxdrive-black/50 backdrop-blur-sm hover:bg-luxdrive-blue text-white rounded-full p-3 transition-colors duration-300"
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 -translate-x-5 md:-translate-x-12 bg-blue-600/50 backdrop-blur-md hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 shadow-lg"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -159,7 +168,7 @@ const TestimonialsSection: React.FC = () => {
           
           <button 
             onClick={nextTestimonial}
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-5 md:translate-x-12 bg-luxdrive-black/50 backdrop-blur-sm hover:bg-luxdrive-blue text-white rounded-full p-3 transition-colors duration-300"
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 translate-x-5 md:translate-x-12 bg-blue-600/50 backdrop-blur-md hover:bg-blue-600 text-white rounded-full p-3 transition-all duration-300 shadow-lg"
             aria-label="Next testimonial"
           >
             <ChevronRight className="w-6 h-6" />
@@ -173,7 +182,7 @@ const TestimonialsSection: React.FC = () => {
               key={i}
               onClick={() => goToTestimonial(i)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                i === activeIndex ? 'bg-luxdrive-blue w-8' : 'bg-white/30 hover:bg-white/50'
+                i === activeIndex ? 'bg-blue-600 w-8 shadow-md' : 'bg-blue-200 hover:bg-blue-400'
               }`}
               aria-label={`Go to testimonial ${i + 1}`}
             />

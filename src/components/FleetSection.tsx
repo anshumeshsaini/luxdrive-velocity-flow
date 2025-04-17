@@ -51,7 +51,9 @@ const FleetSection: React.FC = () => {
   }, []);
 
   return (
-    <div id="fleet" ref={sectionRef} className="py-20 bg-white">
+    <div id="fleet" ref={sectionRef} className="relative py-20 bg-white">
+      {/* Decorative Background */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-100 via-white to-blue-100 opacity-50"></div>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-4 text-blue-600">
           Our Premium Fleet
