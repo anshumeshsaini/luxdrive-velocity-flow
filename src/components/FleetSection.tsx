@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import CarCard from './CarCard';
@@ -54,24 +53,24 @@ const FleetSection: React.FC = () => {
   return (
     <div id="fleet" ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 text-foreground">
-          Our <span className="text-glow">Premium</span> Fleet
+        <h2 className="text-4xl font-bold text-center mb-4 text-blue-600">
+          Our Premium Fleet
         </h2>
-        <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+        <p className="text-blue-600 text-center max-w-3xl mx-auto mb-12">
           Choose from our selection of world-class vehicles, each offering unparalleled performance and luxury.
         </p>
         
         {/* Category Filter */}
         <div className="flex justify-center mb-12">
-          <div className="flex flex-wrap gap-2 p-1 bg-secondary/50 backdrop-blur-sm rounded-full border border-border">
+          <div className="flex flex-wrap gap-2 p-1 bg-white backdrop-blur-sm rounded-full border border-border">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full transition-all duration-300 ${
                   selectedCategory === category 
-                    ? 'bg-luxdrive-blue text-white' 
-                    : 'text-foreground/70 hover:text-foreground'
+                    ? 'bg-blue-600 text-white' 
+                    : 'text-blue-600 hover:text-blue-800'
                 }`}
               >
                 {category}
@@ -97,7 +96,9 @@ const FleetSection: React.FC = () => {
         
         {/* View All Button */}
         <div className="text-center mt-12">
-          <Link to="/all-vehicles" className="btn-luxury">View All Vehicles</Link>
+          <Link to="/all-vehicles" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-all">
+            View All Vehicles
+          </Link>
         </div>
       </div>
     </div>

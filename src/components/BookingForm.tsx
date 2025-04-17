@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -105,6 +104,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
               value={formData.fullName} 
               onChange={handleInputChange} 
               placeholder="John Doe" 
+              className="placeholder-blue-600 border-blue-600 focus:ring-0 focus:border-blue-600" 
               required 
             />
           </div>
@@ -118,6 +118,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
               value={formData.email} 
               onChange={handleInputChange} 
               placeholder="john@example.com" 
+              className="placeholder-blue-600 border-blue-600 focus:ring-0 focus:border-blue-600" 
               required 
             />
           </div>
@@ -130,6 +131,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
               value={formData.phone} 
               onChange={handleInputChange} 
               placeholder="+1 (555) 123-4567" 
+              className="placeholder-blue-600 border-blue-600 focus:ring-0 focus:border-blue-600" 
               required 
             />
           </div>
@@ -142,6 +144,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
               value={formData.address} 
               onChange={handleInputChange} 
               placeholder="123 Main St, City, Country" 
+              className="placeholder-blue-600 border-blue-600 focus:ring-0 focus:border-blue-600" 
             />
           </div>
           
@@ -202,7 +205,12 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
           
           <div className="flex justify-end gap-4 pt-4">
             <Button type="button" variant="outline" onClick={onClose}>Cancel</Button>
-            <Button type="submit" className="bg-luxdrive-blue hover:bg-luxdrive-blue/90">Continue to Payment</Button>
+            <Button 
+              type="submit" 
+              className="bg-white text-blue-600 hover:bg-blue-600 hover:text-white"
+            >
+              Continue to Payment
+            </Button>
           </div>
         </form>
       )}
@@ -222,6 +230,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
               value={formData.nameOnCard} 
               onChange={handleInputChange} 
               placeholder="John Doe" 
+              className="placeholder-blue-600 border-blue-600 focus:ring-0 focus:border-blue-600" 
               required 
             />
           </div>
@@ -235,6 +244,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
                 value={formData.cardNumber} 
                 onChange={handleInputChange} 
                 placeholder="4242 4242 4242 4242" 
+                className="placeholder-blue-600 border-blue-600 focus:ring-0 focus:border-blue-600" 
                 maxLength={19} 
                 required 
               />
@@ -251,6 +261,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
                 value={formData.cardExpiry} 
                 onChange={handleInputChange} 
                 placeholder="MM/YY" 
+                className="placeholder-blue-600 border-blue-600 focus:ring-0 focus:border-blue-600" 
                 maxLength={5} 
                 required 
               />
@@ -264,6 +275,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
                 value={formData.cardCVC} 
                 onChange={handleInputChange} 
                 placeholder="123" 
+                className="placeholder-blue-600 border-blue-600 focus:ring-0 focus:border-blue-600" 
                 maxLength={3} 
                 required 
               />
@@ -276,7 +288,12 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
           
           <div className="flex justify-end gap-4 pt-4">
             <Button type="button" variant="outline" onClick={() => setStep('personal')}>Back</Button>
-            <Button type="submit" className="bg-luxdrive-blue hover:bg-luxdrive-blue/90">Complete Booking</Button>
+            <Button 
+              type="submit" 
+              className="bg-white text-blue-600 hover:bg-blue-600 hover:text-white"
+            >
+              Complete Booking
+            </Button>
           </div>
         </form>
       )}
@@ -294,7 +311,10 @@ const BookingForm: React.FC<BookingFormProps> = ({ carId, carName, price, onClos
           <p className="text-sm text-muted-foreground mb-6">
             A confirmation email has been sent to {formData.email}
           </p>
-          <Button onClick={onClose} className="bg-luxdrive-blue hover:bg-luxdrive-blue/90">
+          <Button 
+            onClick={onClose} 
+            className="bg-white text-blue-600 hover:bg-blue-600 hover:text-white"
+          >
             Done
           </Button>
         </div>

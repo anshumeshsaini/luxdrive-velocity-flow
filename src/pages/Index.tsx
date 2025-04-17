@@ -2,9 +2,8 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import CarReveal from '../components/CarReveal';
 import FleetSection from '../components/FleetSection';
-import BookingSection from '../components/BookingSection';
+
 import TestimonialsSection from '../components/TestimonialsSection';
 import Footer from '../components/Footer';
 import ScrollIndicator from '../components/ScrollIndicator';
@@ -49,7 +48,6 @@ const Index = () => {
       <Hero />
       
       <ScrollReveal>
-        <CarReveal />
       </ScrollReveal>
       
       <ScrollReveal delay={200}>
@@ -57,7 +55,7 @@ const Index = () => {
       </ScrollReveal>
       
       <ScrollReveal delay={300}>
-        <BookingSection />
+
       </ScrollReveal>
       
       <ScrollReveal delay={400}>

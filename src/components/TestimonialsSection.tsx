@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
@@ -101,7 +100,7 @@ const TestimonialsSection: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-20 bg-luxdrive-black">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <ScrollReveal>
           <h2 className="text-4xl font-bold text-center mb-16 text-white">
@@ -118,7 +117,7 @@ const TestimonialsSection: React.FC = () => {
             >
               {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className="min-w-full px-4">
-                  <div className="glass-card rounded-2xl p-8 md:p-12">
+                  <div className="glass-card rounded-2xl p-8 md:p-12 bg-white shadow-lg">
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                       <div className="flex-shrink-0">
                         <img 
@@ -136,7 +135,7 @@ const TestimonialsSection: React.FC = () => {
                             />
                           ))}
                         </div>
-                        <p className="text-luxdrive-silver mb-6 italic text-lg">"{testimonial.text}"</p>
+                        <p className="text-blue-600 mb-6 italic text-lg">"{testimonial.text}"</p>
                         <div>
                           <h4 className="text-white font-bold text-lg">{testimonial.name}</h4>
                           <p className="text-luxdrive-blue">{testimonial.position}</p>

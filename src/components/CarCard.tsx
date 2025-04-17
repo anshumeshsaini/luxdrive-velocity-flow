@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from 'react';
 import { Star, ChevronRight, Users, Gauge } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -120,7 +119,7 @@ const CarCard: React.FC<CarCardProps> = ({
             alt={name} 
             className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
           />
-          <div className="absolute top-4 left-4 bg-luxdrive-blue/10 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-foreground border border-luxdrive-blue/20">
+          <div className="absolute top-4 left-4 bg-blue-600/10 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-foreground border border-blue-600/20">
             {category}
           </div>
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-card to-transparent h-20"></div>
@@ -137,17 +136,22 @@ const CarCard: React.FC<CarCardProps> = ({
           
           <div className="flex justify-between items-center mb-4">
             <div className="text-muted-foreground text-sm">{transmission} • {seats} seats</div>
-            <div className="text-xl font-bold text-luxdrive-blue">${price}<span className="text-xs text-muted-foreground">/day</span></div>
+            <div className="text-xl font-bold text-blue-600">${price}<span className="text-xs text-muted-foreground">/day</span></div>
           </div>
           
           <div className="flex justify-between items-center">
             <button 
               onClick={openDetails}
-              className="text-luxdrive-blue hover:text-luxdrive-blue/80 text-sm font-medium flex items-center"
+              className="text-blue-600 hover:text-blue-600/80 text-sm font-medium flex items-center"
             >
               View Details <ChevronRight className="w-4 h-4 ml-1" />
             </button>
-            <button onClick={openDetails} className="btn-luxury text-sm py-1.5 px-4">Rent Now</button>
+            <button 
+              onClick={openDetails} 
+              className="bg-blue-600 text-white text-sm py-1.5 px-4 rounded hover:bg-blue-600/90"
+            >
+              Rent Now
+            </button>
           </div>
         </div>
       </div>
@@ -166,18 +170,18 @@ const CarCard: React.FC<CarCardProps> = ({
             
             <div className="grid grid-cols-2 gap-4">
               <div className="flex items-center gap-2">
-                <Gauge className="w-5 h-5 text-luxdrive-blue" />
+                <Gauge className="w-5 h-5 text-blue-600" />
                 <span>{transmission}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-luxdrive-blue" />
+                <Users className="w-5 h-5 text-blue-600" />
                 <span>{seats} Seats</span>
               </div>
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5 fill-luxdrive-gold text-luxdrive-gold" />
                 <span>{rating} Rating</span>
               </div>
-              <div className="font-bold text-luxdrive-blue">
+              <div className="font-bold text-blue-600">
                 ${price}<span className="text-xs text-muted-foreground">/day</span>
               </div>
             </div>
@@ -186,7 +190,7 @@ const CarCard: React.FC<CarCardProps> = ({
             
             <div className="flex justify-end gap-4">
               <Button variant="outline" onClick={closeDetails}>Close</Button>
-              <Button className="bg-luxdrive-blue hover:bg-luxdrive-blue/90" onClick={openBooking}>Book Now</Button>
+              <Button className="bg-blue-600 hover:bg-blue-600/90" onClick={openBooking}>Book Now</Button>
             </div>
           </div>
         </DialogContent>

@@ -76,7 +76,7 @@ const CarReveal: React.FC = () => {
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                setAnimatedCars((prev) => 
+                setAnimatedCars((prev) =>
                   prev.includes(car.id) ? prev : [...prev, car.id]
                 );
               }
@@ -84,7 +84,7 @@ const CarReveal: React.FC = () => {
           },
           { threshold: 0.3 }
         );
-        
+
         carObserver.observe(carElement);
       }
     });
@@ -93,7 +93,7 @@ const CarReveal: React.FC = () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current);
       }
-      
+
       cars.forEach((car) => {
         const carElement = document.getElementById(`car-${car.id}`);
         if (carElement) {
@@ -112,7 +112,7 @@ const CarReveal: React.FC = () => {
       if (count.current < count.target) {
         const increment = Math.ceil(count.target / 50);
         const newValue = Math.min(count.current + increment, count.target);
-        
+
         if (newValue !== count.current) {
           updatedCounts[key] = { ...count, current: newValue };
           anyUpdated = true;
@@ -129,46 +129,45 @@ const CarReveal: React.FC = () => {
   return (
     <div ref={sectionRef} id="carReveal" className="py-20 bg-luxdrive-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-white">
-          Exceptional <span className="text-glow">Performance</span>
+        <h2 className="text-4xl font-bold text-center mb-16 text-white">Exceptional <span className="text-glow">Performance</span>
         </h2>
-        
+
         <div className="space-y-40">
           {cars.map((car, index) => (
-            <div 
+            <div
               id={`car-${car.id}`}
-              key={car.id} 
+              key={car.id}
               className={`flex flex-col md:flex-row items-center justify-between gap-10 ${
                 index % 2 === 1 ? 'md:flex-row-reverse' : ''
               }`}
             >
               {/* Car Image */}
-              <div 
+              <div
                 className={`w-full md:w-1/2 overflow-hidden rounded-xl ${
                   animatedCars.includes(car.id) ? 
                     index % 2 === 0 ? 'animate-slide-in-left' : 'animate-slide-in-right' 
                     : 'opacity-0'
                 }`}
-                style={{ 
+                style={{
                   transformOrigin: index % 2 === 0 ? 'left' : 'right',
                 }}
               >
-                <img 
-                  src={car.image} 
-                  alt={car.name} 
+                <img
+                  src={car.image}
+                  alt={car.name}
                   className="w-full h-[300px] md:h-[500px] object-cover rounded-xl transform transition-transform duration-700 hover:scale-105"
                 />
               </div>
-              
+
               {/* Car Stats */}
-              <div 
+              <div
                 className={`w-full md:w-1/2 ${
                   animatedCars.includes(car.id) ? 'animate-fade-in' : 'opacity-0'
                 }`}
                 style={{ animationDelay: '0.3s' }}
               >
                 <h3 className="text-3xl font-bold text-white mb-4">{car.name}</h3>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                   <div className="glass-card p-6 rounded-xl">
                     <div className="text-luxdrive-silver mb-2">Top Speed</div>
@@ -177,7 +176,7 @@ const CarReveal: React.FC = () => {
                       <span className="text-lg ml-1 text-luxdrive-blue">km/h</span>
                     </div>
                   </div>
-                  
+
                   <div className="glass-card p-6 rounded-xl">
                     <div className="text-luxdrive-silver mb-2">Horsepower</div>
                     <div className="text-4xl font-bold text-white flex items-baseline">
@@ -185,7 +184,7 @@ const CarReveal: React.FC = () => {
                       <span className="text-lg ml-1 text-luxdrive-blue">hp</span>
                     </div>
                   </div>
-                  
+
                   <div className="glass-card p-6 rounded-xl">
                     <div className="text-luxdrive-silver mb-2">Rental Price</div>
                     <div className="text-4xl font-bold text-white flex items-baseline">
@@ -194,7 +193,7 @@ const CarReveal: React.FC = () => {
                     </div>
                   </div>
                 </div>
-                
+
                 <button className="btn-luxury mt-8">Reserve Now</button>
               </div>
             </div>
