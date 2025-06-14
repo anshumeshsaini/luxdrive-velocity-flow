@@ -51,25 +51,25 @@ const FleetSection: React.FC = () => {
   }, []);
 
   return (
-    <div id="fleet" ref={sectionRef} className="relative py-20 bg-white">
+    <div id="fleet" ref={sectionRef} className="relative py-12 md:py-20 bg-white">
       {/* Decorative Background */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-100 via-white to-blue-100 opacity-50"></div>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 text-blue-600">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-blue-600">
           Our Premium Fleet
         </h2>
-        <p className="text-blue-600 text-center max-w-3xl mx-auto mb-12">
+        <p className="text-blue-600 text-center max-w-3xl mx-auto mb-8 md:mb-12 px-4">
           Choose from our selection of world-class vehicles, each offering unparalleled performance and luxury.
         </p>
         
-        {/* Category Filter */}
-        <div className="flex justify-center mb-12">
-          <div className="flex flex-wrap gap-2 p-1 bg-white backdrop-blur-sm rounded-full border border-border">
+        {/* Category Filter - Updated for mobile responsiveness */}
+        <div className="flex justify-center mb-8 md:mb-12 overflow-x-auto px-2">
+          <div className="flex flex-nowrap md:flex-wrap gap-2 p-1 bg-white backdrop-blur-sm rounded-full border border-border max-w-full">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                className={`px-4 py-2 md:px-6 md:py-2 rounded-full transition-all duration-300 whitespace-nowrap ${
                   selectedCategory === category 
                     ? 'bg-blue-600 text-white' 
                     : 'text-blue-600 hover:text-blue-800'
@@ -82,7 +82,7 @@ const FleetSection: React.FC = () => {
         </div>
         
         {/* Car Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {filteredCars.map((car) => (
             <div 
               key={car.id} 
@@ -97,8 +97,8 @@ const FleetSection: React.FC = () => {
         </div>
         
         {/* View All Button */}
-        <div className="text-center mt-12">
-          <Link to="/all-vehicles" className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-all">
+        <div className="text-center mt-8 md:mt-12">
+          <Link to="/all-vehicles" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-all">
             View All Vehicles
           </Link>
         </div>

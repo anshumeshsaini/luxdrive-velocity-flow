@@ -59,7 +59,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       <div 
-        className={`md:hidden bg-blue-700 overflow-hidden transition-all duration-500 ease-in-out ${
+        className={`md:hidden bg-black-700 overflow-hidden transition-all duration-500 ease-in-out ${
           menuOpen ? 'max-h-screen py-4' : 'max-h-0'
         }`}
       >

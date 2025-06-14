@@ -78,16 +78,16 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <Phone size={18} className="text-white mr-3 mt-1" />
-                <span className="text-gray-300">+1 (800) LUXDRIVE</span>
+                <span className="text-gray-300">917379340224</span>
               </li>
               <li className="flex items-start">
                 <Mail size={18} className="text-white mr-3 mt-1" />
-                <span className="text-gray-300">info@luxdrive.com</span>
+                <span className="text-gray-300">Anshumesh.saini@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin size={18} className="text-white mr-3 mt-1" />
                 <span className="text-gray-300">
-                  123 Luxury Avenue, Beverly Hills, CA 90210, United States
+                  Jaunpur, Uttar Pradesh, India
                 </span>
               </li>
             </ul>
